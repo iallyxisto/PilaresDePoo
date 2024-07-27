@@ -1,31 +1,43 @@
 package br.com.Veiculo;
 
-public class Moto extends VeiculoAbstract implements VeiculoInterface{
-    private  boolean temEmbreagem;
+public class Moto extends VeiculoAbstract {
+    private boolean temEmbreagem;
 
-    public Moto(String placa, int velocidade, String modelo, boolean temEmbreagem) {
-        super(placa, velocidade,modelo);
+    public Moto(String placa, String modelo, boolean temEmbreagem) {
+        super(placa, modelo);
         this.temEmbreagem = temEmbreagem;
     }
 
     @Override
     public void acelerar() {
-        if (velocidade>0){
-            System.out.println("Acelerando");
-        } else {
-            System.out.println("A moto ainda está parada");
-        }
 
+        //System.out.println("Acelerando");
+        for (; velocidadeAtual < velocidadeMax; velocidadeAtual++) {
+
+        }
+        System.out.println("Acelerando: " + velocidadeAtual);
     }
 
     @Override
     public void frear() {
-        if (velocidade==0){
-            System.out.println("Moto freioy");
-        } else {
-            System.out.println("A moto ainda está em movimeto");
-        }
+        for (velocidadeMin = 0; velocidadeAtual > velocidadeMin; velocidadeAtual--) {
 
+        }
+        System.out.println("Freiando: " + velocidadeAtual);
+    }
+
+    @Override
+    public String toString() {
+        return "Moto modelo: " + modelo + "\n" +
+                "Tem Embreagem: " + temEmbreagem + "\n" +
+                "Placa: " + placa + "\n" +
+                "Velocidade: " + velocidadeAtual + "\n";
+
+
+    }
+
+    public void empinar() {
+        System.out.println("A moto está empinando");
     }
 
     public boolean isTemEmbreagem() {
@@ -35,4 +47,5 @@ public class Moto extends VeiculoAbstract implements VeiculoInterface{
     public void setTemEmbreagem(boolean temEmbreagem) {
         this.temEmbreagem = temEmbreagem;
     }
+
 }

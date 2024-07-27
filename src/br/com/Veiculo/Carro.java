@@ -1,24 +1,33 @@
 package br.com.Veiculo;
 
-public class Carro extends VeiculoAbstract implements VeiculoInterface {
+public class Carro extends VeiculoAbstract {
 
-    public Carro(String placa, int qntPneu, String modelo) {
-        super(placa, qntPneu, modelo);
+
+    public Carro(String placa, String modelo) {
+        super(placa, modelo);
     }
 
     @Override
     public void acelerar() {
-        System.out.println("O carro de modelo "+ modelo + "está na velocidade máxima");
-
+        for (velocidadeMin = 0; velocidadeMin < velocidadeMax; velocidadeMin++) {
+            velocidadeAtual = velocidadeMin;
+        }
+        System.out.println("Acelerando: " + velocidadeAtual);
     }
 
     @Override
     public void frear() {
-       if (velocidade <= 0) {
-           System.out.println("Veiculo freiou." + velocidade);
-       } else {
-           System.out.println("o veiculo ainda está em movimento");
-       }
+        for (velocidadeMin = 0; velocidadeAtual > velocidadeMin; velocidadeAtual--) {
+
+        }
+
+        System.out.println("Freiando: " + velocidadeAtual);
+    }
+
+    @Override
+    public String toString() {
+        return "Carro modelo: " + modelo + "\nPlaca='" + placa + "\nEstá na velocidade: "
+                + velocidadeAtual;
 
     }
 }
