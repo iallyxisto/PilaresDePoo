@@ -23,7 +23,7 @@ public class Moto extends VeiculoAbstract {
         for (velocidadeMin = 0; velocidadeAtual > velocidadeMin; velocidadeAtual--) {
 
         }
-        System.out.println("Freiando: " + velocidadeAtual);
+        System.out.println("Freando: " + velocidadeAtual);
     }
 
     @Override

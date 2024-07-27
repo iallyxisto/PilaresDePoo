@@ -21,7 +21,7 @@ public class Carro extends VeiculoAbstract {
 
         }
 
-        System.out.println("Freiando: " + velocidadeAtual);
+        System.out.println("Freando: " + velocidadeAtual);
     }
 
     @Override
